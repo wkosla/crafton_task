@@ -8,6 +8,189 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
+
+  <nav class="nav">
+    <div class="nav__logo">
+      <!-- Logo -->
+    </div>
+    <ul class="nav__links">
+      <li class="nav__link">I stopnia</li>
+      <li class="nav__link">II stopnia</li>
+      <li class="nav__link">Podyplomowe</li>
+      <li class="nav__link">Szkolenia</li>
+      <li class="nav__link">Usługi</li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="row hero">
+      <h1 class="hero__header">
+        Będziesz się uczyć z ciekawością.
+        <em class="hero__highlight">Obiecujemy.</em>
+      </h1>
+      <div class="hero__btns">
+        <button class="btn">Zobacz więcej</button>
+        <button class="btn btn--inverted">Umów się z aniołem</button>
+      </div>
+      <div class="hero__arrows">
+        <button class="hero__arrow"></button>
+        <button class="hero__arrow"></button>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="row__text">
+        <h2 class="row__header">Dla kogo?</h2>
+        <p class="row__paragraph">
+          Dedykowane nauczycielom posiadającym przygotowanie pedagogiczne, którzy chcą uzyskać merytoryczne i metodyczne przygotowanie do nauczania kolejnego przedmiotu - Geografii.
+        </p>
+        <p class="row__paragraph">
+          Studia adresowane są do osób legitymujących się wyższym wykształceniem na poziomie studiów licencjackim o specjalnościach nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, lub słuchaczy legitymujących się wyższym wykształceniem na poziomie studiów magisterskich nadających kwalifikacje nauczycielskie i przygotowanie pedagogiczne, zgodnie z Rozporządzeniem Ministra Edukacji Narodowej z dnia 1 sierpnia 2017 r. w sprawie szczegółowych kwalifikacji wymaganych od nauczycieli (Dz.U. 2017 poz. 1575).
+        </p>           
+        <p class="row__paragraph">
+          Wymagane od kandydata:
+          <ul class="row__list">
+            <li class="row__list-item">
+              Ukończone studia wyższe
+            </li>
+            <li class="row__list-item">
+              Przygotowanie pedagogiczne
+            </li>
+          </ul>
+        </p>
+      </div>
+      <div class="row__image">
+        <!-- Image -->
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="row__image">
+        <!-- Image -->
+      </div>
+      <div class="row__text">
+        <h2 class="row__header">Po co?</h2>
+        <p class="row__paragraph">
+          UW wie co zrobić, by programy proponowanych kierunków studiów były jak najbardziej atrakcyjne z biznesowego punktu widzenia. Do współpracy zapraszamy przedsiębiorców, trenerów, doświadczonych praktyków. Dbamy o to, żeby nasi studenci korzystali z doświadczenia i wiedzy osób, które odniosły w życiu zawodowy sukces. Dążymy do tego, by wybierający naszą uczelnię już w trakcie studiów mieli kontakt z jak największą liczbą pracodawców i praktyków biznesu ponieważ wiemy, że pomoże to im w zdobyciu wielu potrzebnych kwalifikacji oraz umiejętności, które zaprocentują w każdym miejscu pracy a także zainspiruje do poszerzania swoich kompetencji.
+        </p>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="row__text">
+        <h2 class="row__header">Z kim?</h2>
+        <p class="row__paragraph">
+          Ciekawość jest najpotężniejszą cechą ludzką, która popycha ludzi do ciągłego rozwoju. CDV to miejsce, w którym studenci z zainteresowaniem i z przyjemnością zdobywają wiedzę. Zarówno studenci, absolwenci, jak i pracownicy to osoby nie tylko ciekawe świata, ale także pełne pasji w odkrywaniu nowych rzeczy i w pozytywny sposób wpływające na swoje otoczenie.
+        </p>
+        <p class="row__paragraph">
+          Nasze kierunki studiów są interesujące i innowacyjne, tworzone we współpracy z pracodawcami oraz na podstawie trendów w światowej gospodarce i kierunku zmian na dynamicznym rynku pracy. Nasi absolwenci znajdują pracę zgodną ze swoimi zainteresowaniami i wykształceniem.
+        </p>
+      </div>
+      <div class="row__image">
+        <!-- Video -->
+      </div>
+    </section>
+
+    <section class="row">
+      <form class="form">
+        <header>
+          <h3 class="form__header">Nie znalazłeś odpowiedniego kontaktu?</h3>
+          <p class="form__subheader">Skorzystaj z formularza.</p>
+        </header>
+        <div class="input">
+          <label class="input__label" for="first_name">Imię</label>
+          <input class="input__input" type="text" name="first_name" id="first_name">
+        </div>
+        <div class="input">
+          <label class="input__label" for="last_name">Nazwisko</label>
+          <input class="input__input" type="text" name="last_name" id="last_name">
+        </div>
+        <div class="input">
+          <label class="input__label" for="email">Adres e-mail</label>
+          <input class="input__input" type="email" name="email" id="email">
+        </div>
+        <div class="input">
+          <label class="input__label" for="message">Treść wiadomości</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div class="input">
+          <input class="input__input" type="checkbox" name="consent" id="consent">
+          <label class="input__label" for="consent">
+            Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żądania dostępu do moich danych osobowych, ich zmiany oraz usunięcia.
+          </label>
+        </div>
+        <button class="btn btn--blue" type="submit">Wyślij</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <address>
+      ul. Głogowska 10
+      61-719 Poznań        
+      tel. 61 27 11 000
+    </address>
+
+    <div>
+      <h4>O nas</h4>
+      <ul>
+        <li>Dlaczego CDV</li>
+        <li>Kadra naukowa</li>
+        <li>Dla mediów</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Dla kandydata</h4>
+      <ul>
+        <li>Poradnik maturzysty</li>
+        <li>Rekrutacja</li>
+        <li>Kredyt studencki</li>
+        <li>Studia dla cudzoziemców</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Dla studenta</h4>
+      <ul>
+        <li>Wirtualna uczelnia</li>
+        <li>Stypendia</li>
+        <li>Biuro karier</li>
+        <li>Studiuj dalej</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Dla biznesu</h4>
+      <ul>
+        <li>Współpraca z biznesem</li>
+        <li>EmotionsLAB</li>
+        <li>Wynajem sal</li>
+        <li>Znajdź pracownika</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Na skróty</h4>
+      <ul>
+        <li>Aktualności</li>
+        <li>Wydarzenia</li>
+        <li>Konferencje</li>
+        <li>Blog</li>
+      </ul>
+    </div>
+
+    <div>
+      <!-- MAP -->
+    </div>
+
+    <div>
+      Projekt i realizacja: Crafton
+    </div>
+
+  </footer>
+
   <script src="/assets/js/script.js"></script>
 </body>
 </html>
