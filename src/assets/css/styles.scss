@@ -18,10 +18,22 @@ body {
   height: 50px;
   padding: 0 53px 0 33px;
   text-transform: uppercase;
+  transition: .1s;
+  will-change: background, color;
+
+  &:hover {
+    background: none;
+    color: $light;
+  }
 
   &--inverted {
     background: none;
     color: $light;
+
+    &:hover {
+      background-color: $bg-primary;
+      color: $primary;
+    }
   }
 }
 
@@ -35,7 +47,35 @@ body {
   padding: 40px calc((100% - 1187px) / 2) 0;
   position: fixed;
   top: 0;
+  transition: .2s;
   width: 100%;
+  will-change: background, color, padding;
+
+  &--scroll {
+    background-color: $bg-primary;
+    color: $primary;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    .nav__logo {
+      &--white {
+        display: none;
+      }
+
+      &--black {
+        display: block;
+      }
+    }
+  }
+}
+
+.nav__logo {
+  display: block;
+  width: 90px;
+
+  &--black {
+    display: none;
+  }
 }
 
 .nav__links {
@@ -61,7 +101,7 @@ body {
   background: url('img/hero.png') center / cover no-repeat;
   color: $light;
   flex-wrap: wrap;
-  padding-top: 400px;
+  padding-top: 47vh;
 }
 
 .hero__header {
@@ -97,4 +137,13 @@ body {
   &:not(:first-child) {
     margin-left: 14px;
   }
+
+  &:hover {
+    color: $highlight;
+  }
+}
+
+.hero__icon {
+  transition: .1s;
+  will-change: fill;
 }
