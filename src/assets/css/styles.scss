@@ -1,1 +1,100 @@
+@import 'partials/normalize';
+@import 'partials/fonts';
 @import 'partials/variables';
+@import 'partials/mixins';
+
+body {
+  background-color: $bg-primary;
+  font-family: $font-family;
+  font-size: $base-size;
+}
+
+.btn {
+  background-color: $bg-primary;
+  border: 2px solid $light;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: .777em;
+  height: 50px;
+  padding: 0 53px 0 33px;
+  text-transform: uppercase;
+
+  &--inverted {
+    background: none;
+    color: $light;
+  }
+}
+
+// NAV
+
+.nav {
+  @include flex-vcenter;
+  color: $light;
+  font-size: 0.889em;
+  justify-content: space-between;
+  padding: 40px calc((100% - 1187px) / 2) 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav__links {
+  @include flex-vcenter;
+  list-style: none;
+}
+
+.nav__link {
+  &:not(:first-child) {
+    margin-left: 71px;
+  }
+}
+
+.row {
+  min-height: 100vh;
+  min-width: 100%;
+  padding: 0 calc((100% - 1187px) / 2);
+}
+
+// HERO
+
+.hero {
+  background: url('img/hero.png') center / cover no-repeat;
+  color: $light;
+  flex-wrap: wrap;
+  padding-top: 400px;
+}
+
+.hero__header {
+  font-size: 2.222em;
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 0 0 40px;
+}
+
+.hero__highlight {
+  color: $secondary;
+  display: inline-block;
+  font-style: normal;
+  width: 100%;
+}
+
+.hero__btns {
+  margin-bottom: 92px;
+  width: 100%;
+}
+
+.hero__more {
+  margin-right: 20px;
+}
+
+.hero__arrow {
+  background: none;
+  border: 0;
+  color: $light;
+  cursor: pointer;
+  padding: 0;
+
+  &:not(:first-child) {
+    margin-left: 14px;
+  }
+}

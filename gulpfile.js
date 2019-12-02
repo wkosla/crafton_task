@@ -46,14 +46,25 @@ function html() {
     .pipe(gulp.dest('./build/'));
 }
 
+function fonts() {
+  return gulp.src('./src/assets/fonts/**/*.ttf')
+    .pipe(gulp.dest('./build/assets/fonts/'));
+}
+
+function images() {
+  return gulp.src('./src/assets/img/**/*')
+    .pipe(gulp.dest('./build/assets/img/'));
+}
+
 function watchFiles() {
   gulp.watch('./src/assets/css/**/*', styles);
   gulp.watch('./src/assets/js/**/*', scripts);
   gulp.watch('./src/**/*.html', gulp.series(html, browserSyncReload));
+  gulp.watch('./src/assets/img/**/*', gulp.series(images, browserSyncReload));
 }
 
-const watch = gulp.series(html, styles, scripts, gulp.parallel(watchFiles, browserSync));
-const build = gulp.series(html, styles, scripts);
+const watch = gulp.series(html, styles, scripts, fonts, images, gulp.parallel(watchFiles, browserSync));
+const build = gulp.series(html, styles, scripts, fonts, images);
 
 exports.watch = watch;
 exports.build = build;

@@ -4,15 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Universitas Varsoviensis</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <title>Uniwersytet Warszawski</title>
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
 
   <nav class="nav">
-    <div class="nav__logo">
-      <!-- Logo -->
-    </div>
+    <img class="nav__logo" src="/assets/img/uw_logo.png" alt="Logo Uniwersytetu Warszawskiego">
     <ul class="nav__links">
       <li class="nav__link">I stopnia</li>
       <li class="nav__link">II stopnia</li>
@@ -29,12 +27,16 @@
         <em class="hero__highlight">Obiecujemy.</em>
       </h1>
       <div class="hero__btns">
-        <button class="btn">Zobacz więcej</button>
-        <button class="btn btn--inverted">Umów się z aniołem</button>
+        <button class="btn hero__more">Zobacz więcej</button>
+        <button class="btn btn--inverted hero__angel">Umów się z aniołem</button>
       </div>
       <div class="hero__arrows">
-        <button class="hero__arrow"></button>
-        <button class="hero__arrow"></button>
+        <button class="hero__arrow hero__arrow--left">
+          <svg width="30" height="21"><path d="M30.109 8.4H8L16.364 0h-5.913L-.005 10.5 10.448 21h5.913L8 12.6h22.112V8.4z" fill="currentColor"/></svg>
+        </button>
+        <button class="hero__arrow hero__arrow--right">
+          <svg width="30" height="21"><path d="M-.015 12.6h22.109L13.73 21h5.913l10.456-10.5L19.646 0h-5.913l8.361 8.4H-.015v4.2z" fill="currentColor"/></svg>
+        </button>
       </div>
     </section>
 
@@ -191,6 +193,6 @@
 
   </footer>
 
-  <script src="/assets/js/script.js"></script>
+  <script src="/assets/script.js"></script>
 </body>
 </html>
