@@ -5,8 +5,20 @@
 
 body {
   background-color: $bg-primary;
+  color: $primary;
   font-family: $font-family;
   font-size: $base-size;
+}
+
+a {
+  color: $secondary;
+  text-decoration: none;
+  transition: .1s;
+  will-change: colo;
+
+  &:hover {
+    color: $primary;
+  }
 }
 
 .btn {
@@ -50,9 +62,11 @@ body {
   transition: .2s;
   width: 100%;
   will-change: background, color, padding;
+  z-index: 9000;
 
   &--scroll {
     background-color: $bg-primary;
+    box-shadow: 11px 0 35px transparentize($shadow-color, .78);
     color: $primary;
     padding-bottom: 20px;
     padding-top: 20px;
@@ -89,10 +103,70 @@ body {
   }
 }
 
+// ROW
+
 .row {
+  display: flex;
   min-height: 100vh;
   min-width: 100%;
-  padding: 0 calc((100% - 1187px) / 2);
+  padding: 110px calc((100% - 1187px) / 2);
+}
+
+.row__header {
+  font-size: 2em;
+  font-weight: 800;
+  margin: 0 0 40px;
+}
+
+.row__paragraph {
+  line-height: 1.5;
+  margin: 40px 0;
+}
+
+.row__list-header {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 70px 0 30px;
+}
+
+.row__list {
+  line-height: 1.5;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.row__list-item {
+  margin: 30px 0;
+
+  &::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 30 21"><path d="M-.015 12.6h22.109L13.73 21h5.913l10.456-10.5L19.646 0h-5.913l8.361 8.4H-.015v4.2z" fill="rgb(0, 182, 220)" fill-rule="evenodd"/></svg>');
+    margin-right: 18px;
+  }
+}
+
+.row__image {
+  box-shadow: 11px 11px 35px transparentize($shadow-color, .78);
+  height: 100%;
+  margin-left: 87px;
+  position: relative;
+  width: 100%;
+
+  &--left {
+    margin-left: 0;
+    margin-right: 95px;
+  }
+}
+
+.row__play {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 // HERO

@@ -1,0 +1,36 @@
+<svg id="Grupa_1" data-name="Grupa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="178" height="178" viewBox="0 0 178 178">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #00b6dc;
+      }
+
+      .cls-1 {
+        opacity: 0.7;
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        opacity: 0.2;
+        filter: url(#filter-2);
+      }
+    </style>
+    <filter id="filter" x="18" y="18" width="141" height="141" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="5" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="4.899"/>
+      <feFlood result="flood" flood-color="#00b6dc" flood-opacity="0.41"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter-2" x="0" y="0" width="178" height="178" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="5" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="4.899"/>
+      <feFlood result="flood" flood-color="#00b6dc" flood-opacity="0.41"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <circle id="Ellipse_2_copy_3" data-name="Ellipse 2 copy 3" class="cls-1" cx="88.075" cy="83.075" r="46.735"/>
+  <circle id="Ellipse_2_copy_3_kopia" data-name="Ellipse 2 copy 3 kopia" class="cls-2" cx="88.5" cy="83.5" r="65.5"/>
+  <image id="play-button" x="74" y="62" width="38" height="43" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAArCAYAAAAUo/pwAAACeElEQVRYhc2YO2gVQRSGTx4SFIIX4iOFFqbRJhZqoVZql0ZSamcnWqjYWMbOLliIdopFki5dEIJaKeKj0UYJ0SJFFFPkBRLNJZ8c+I8Mm8TcS+5m9sB/H7uzMx8zOzP/HAP2AiPAN2ASuAhYbpmgivESOJ4Tzj8WBXUSuA781P868AjYnwsMwcXFGjAM/NG9eeAWsCsH2MIGN48CE8kQfwEGqgAWcpjPCeAzQWcHc3VqOOdVfhW4r2HPChbq0YSo67k54BrQkRss1A+8SIb3E3C+CmChQeBrAjgO9FUBzNUF3AGWVNcKcA/ozg0W6gUeA2uq8ztwBWjPDRbyHeRVMrzvgbNVAHO1AZeAmQRwDDiUGyy0GxgCfqkd/76r61nBQt5To0nveU9eVs9mBQv5u/YuAfR38VQVwEyz1GfrrNpe02zuzQ0W6tZ6tyKGZa2HXbnBQn3aMSI+AgeqABbyvXZKPCM+KzCzRTOrWf44bWZvzGyqvQIwEQNmNqbfb6swlMfkiiN8OenJCVaTC14Vg7vjm3LLWWZlh1zvnNp2N/xQ7vhfuZ0GuyC3G/Fcbnhd2Z0CK65V03K/mz5TNlis7r/VzlK6uucAi/3wR2E/PNhoHWWAuYP4UHAQJ5qtp5Vgh+VSI2bkYjf1XGWD7ZErTV3qUCMutSywNrnQ1NePNuPrywBz1/m6sI00fRJqJZi7zCfJ2XF2O2fHVoDFaXtZ5Vty2t4u2KASxxG+gh8pC6gRsH4liSN8jztXNlARLM3B7tsgB3a1jBzYVmALAvBZdbuQNRwuM2u4FdhT1sfETuRZ/6dOM7thZnUzO2Nm02b2wMwms7p/M/sLloGyzoGLEJYAAAAASUVORK5CYII="/>
+</svg>
