@@ -47,6 +47,17 @@ a {
       color: $primary;
     }
   }
+
+  &--blue {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $light;
+    padding-right: 33px;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
 }
 
 // NAV
@@ -110,6 +121,14 @@ a {
   min-height: 100vh;
   min-width: 100%;
   padding: 110px calc((100% - 1187px) / 2);
+
+  &:nth-child(2) {
+    padding-top: 216px;
+  }
+
+  &:last-child {
+    padding-bottom: 220px;
+  }
 }
 
 .row__header {
@@ -220,4 +239,95 @@ a {
 .hero__icon {
   transition: .1s;
   will-change: fill;
+}
+
+// FORM
+
+.form {
+  background-color: $bg-secondary;
+  padding: 50px calc((100% - 1187px) / 2);
+}
+
+.form__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 580px;
+}
+
+.form__header-container {
+  text-align: center;
+  width: 100%;
+}
+
+.form__header {
+  font-size: 1em;
+  margin: 0;
+}
+
+.form__subheader {
+  color: $tertiary;
+  font-size: 0.833em;
+  margin-bottom: 40px;
+}
+
+.input {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+
+  &--halfwidth {
+    width: calc(50% - 17px);
+  }
+
+  &--flex {
+    display: flex;
+  }
+}
+
+.input__label {
+  color: $tertiary;
+  font-size: .833em;
+  left: 15px;
+  position: absolute;
+  top: 16px;
+  transition: .2s;
+  will-change: top, font-size;
+
+  &--nonabsolute {
+    font-size: .533em;
+    line-height: 1.5;
+    margin-left: 12px;
+    position: static;
+  }
+}
+
+.input__input {
+  background-color: $bg-primary;
+  border: 0;
+  font-family: $font-family;
+  font-size: .833em;
+  height: 50px;
+  padding: 25px 15px 9px;
+  transition: .2s;
+  width: 100%;
+  will-change: box-shadow;
+
+  &--large {
+    height: 160px;
+  }
+
+  &:focus {
+    box-shadow: 0 8px 8px transparentize($shadow-color, .84);
+
+    + .input__label {
+      font-size: .611em;
+      top: 10px;
+    }
+  }
+}
+
+.form__btn {
+  margin: auto;
 }
