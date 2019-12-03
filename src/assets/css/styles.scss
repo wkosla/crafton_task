@@ -268,7 +268,7 @@ a {
 
 .form__subheader {
   color: $tertiary;
-  font-size: 0.833em;
+  font-size: 0.777em;
   margin-bottom: 40px;
 }
 
@@ -288,7 +288,7 @@ a {
 
 .input__label {
   color: $tertiary;
-  font-size: .833em;
+  font-size: .777em;
   left: 15px;
   position: absolute;
   top: 16px;
@@ -307,7 +307,7 @@ a {
   background-color: $bg-primary;
   border: 0;
   font-family: $font-family;
-  font-size: .833em;
+  font-size: .777em;
   height: 50px;
   padding: 25px 15px 9px;
   transition: .2s;
@@ -330,4 +330,58 @@ a {
 
 .form__btn {
   margin: auto;
+}
+
+// FOOTER
+
+.footer {
+  background-color: $bg-tertiary;
+  color: $light;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: .777em;
+  justify-content: space-between;
+  padding: 84px calc((100% - 1187px) / 2) 70px;
+  position: relative;
+}
+
+.address {
+  margin-right: 98px;
+}
+
+.address__line {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.address__map {
+  background-color: $bg-primary;
+  border-radius: 50%;
+  height: 200px;
+  margin-top: 50px;
+  width: 200px;
+}
+
+.group__header {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 24px;
+}
+
+.group__links {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.group__link {
+  margin: 20px 0;
+}
+
+.footer__credits {
+  margin-top: -40px;
+  padding-right: 20px;
+  text-align: right;
+  width: 100%;
 }
