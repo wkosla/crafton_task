@@ -113,6 +113,10 @@ a {
 .nav__link {
   &:not(:first-child) {
     margin-left: 71px;
+
+    @media screen and (max-width: 1000px) {
+      margin-left: 40px;
+    }
   }
 }
 
@@ -173,13 +177,23 @@ a {
   display: block;
   height: 100%;
   margin-left: 87px;
-  max-width: 50%;
+  max-width: 45%;
   object-fit: cover;
+  object-position: top left;
   position: relative;
+
+  @media screen and (max-width: 1000px) {
+    margin-left: 40px;
+    max-width: 40%;
+  }
 
   &--left {
     margin-left: 0;
     margin-right: 95px;
+
+    @media screen and (max-width: 1000px) {
+      margin-right: 40px;
+    }
   }
 
   &--container {
