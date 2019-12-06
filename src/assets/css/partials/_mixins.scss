@@ -2,3 +2,13 @@
   align-items: center;
   display: flex;
 }
+
+@mixin side-padding {
+  padding-left: calc((100% - 1187px) / 2);
+  padding-right: calc((100% - 1187px) / 2);
+
+  @media screen and (max-width: 1350px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

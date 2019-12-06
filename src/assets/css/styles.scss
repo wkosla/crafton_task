@@ -64,10 +64,12 @@ a {
 
 .nav {
   @include flex-vcenter;
+  @include side-padding;
   color: $light;
   font-size: 0.889em;
   justify-content: space-between;
-  padding: 40px calc((100% - 1187px) / 2) 0;
+  padding-bottom: 0;
+  padding-top: 40px;
   position: fixed;
   top: 0;
   transition: .2s;
@@ -117,10 +119,12 @@ a {
 // ROW
 
 .row {
+  @include side-padding;
   display: flex;
   min-height: 100vh;
   min-width: 100%;
-  padding: 110px calc((100% - 1187px) / 2);
+  padding-bottom: 110px;
+  padding-top: 110px;
 
   &:nth-child(2) {
     padding-top: 216px;
@@ -166,14 +170,20 @@ a {
 
 .row__image {
   box-shadow: 11px 11px 35px transparentize($shadow-color, .78);
+  display: block;
   height: 100%;
   margin-left: 87px;
+  max-width: 50%;
+  object-fit: cover;
   position: relative;
-  width: 100%;
 
   &--left {
     margin-left: 0;
     margin-right: 95px;
+  }
+
+  &--container {
+    flex-shrink: 0;
   }
 }
 
@@ -244,8 +254,10 @@ a {
 // FORM
 
 .form {
+  @include side-padding;
   background-color: $bg-secondary;
-  padding: 50px calc((100% - 1187px) / 2);
+  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .form__form {
@@ -335,13 +347,14 @@ a {
 // FOOTER
 
 .footer {
+  @include side-padding;
   background-color: $bg-tertiary;
   color: $light;
   display: flex;
-  flex-wrap: wrap;
   font-size: .777em;
   justify-content: space-between;
-  padding: 84px calc((100% - 1187px) / 2) 70px;
+  padding-bottom: 70px;
+  padding-top: 84px;
   position: relative;
 }
 
@@ -363,6 +376,25 @@ a {
   width: 200px;
 }
 
+.footer__links {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1200px) {
+    justify-content: flex-start;
+  }
+}
+
+.footer__group {
+  margin-bottom: 40px;
+
+  &:not(:nth-child(5)) {
+    margin-right: 40px;
+  }
+}
+
 .group__header {
   font-size: 1em;
   font-weight: normal;
@@ -380,7 +412,8 @@ a {
 }
 
 .footer__credits {
-  margin-top: -40px;
+  align-self: flex-end;
+  margin-bottom: 40px;
   padding-right: 20px;
   text-align: right;
   width: 100%;
