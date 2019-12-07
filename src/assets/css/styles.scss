@@ -39,7 +39,7 @@ a {
   height: 50px;
   padding: 0 53px 0 33px;
   text-transform: uppercase;
-  transition: .1s;
+  transition: .2s;
   will-change: background, color;
 
   &:hover {
@@ -69,6 +69,10 @@ a {
   }
 }
 
+.page {
+  position: relative;
+}
+
 // NAV
 
 .nav {
@@ -93,21 +97,29 @@ a {
     padding-bottom: 20px;
     padding-top: 20px;
 
-    .nav__logo {
-      &--white {
-        display: none;
-      }
+    .nav__logo--white {
+      margin-top: -100px;
+    }
 
-      &--black {
-        display: block;
-      }
+    .hamburger-inner {
+      background-color: $primary;
     }
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 750px) {    
     // MOBILE NAV
+    &--scroll {
+      .nav__logo--white {
+        margin-top: -78px;
+      }
+    }
+
     .hamburger {
       display: block;
+    }
+
+    .nav__logos {
+      height: 78px;
     }
 
     .nav__logo {
@@ -120,13 +132,16 @@ a {
   }
 }
 
+.nav__logos {
+  height: 100px;
+  overflow: hidden;
+}
+
 .nav__logo {
   display: block;
+  transition: .2s;
   width: 90px;
-
-  &--black {
-    display: none;
-  }
+  will-change: margin;
 }
 
 .nav__links {
@@ -149,11 +164,66 @@ a {
 }
 
 .hamburger-inner {
-  background-color: $primary;
+  background-color: $light;
 
   &::before,
   &::after {
     background-color: inherit;
+  }
+}
+
+// SECTIONS NAV
+
+.sections {
+  display: flex;
+  height: 100vh;
+  margin: 0 0 0 auto;
+  min-width: 80px;
+  position: sticky;
+  top: 0;
+  width: calc((100% - 1187px) / 2);
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.sections__list {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+}
+
+.sections__dot {
+  &:not(:last-child) {
+    margin-bottom: 27px;
+  }
+}
+
+.sections__btn {
+  background-color: $bg-primary;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 15px;
+  transition: .2s;
+  width: 15px;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.4);
+  }
+
+  &:active {
+    transform: none;
+  }
+
+  &--dark {
+    background-color: $primary;
+  }
+
+  &--active {
+    background-color: $highlight;
   }
 }
 
@@ -167,7 +237,7 @@ a {
   padding-bottom: 110px;
   padding-top: 110px;
 
-  &:nth-child(2) {
+  &:nth-child(3) {
     padding-top: 216px;
   }
 
@@ -176,7 +246,7 @@ a {
   }
 
   @media screen and (max-width: 1000px) {
-    &:nth-child(2) {
+    &:nth-child(3) {
       padding-top: 25vw;
     }
 
@@ -234,10 +304,10 @@ a {
 .row__image {
   box-shadow: 11px 11px 35px transparentize($shadow-color, .78);
   display: block;
+  flex-shrink: 0;
   height: 100%;
   margin-left: 87px;
   max-width: 45%;
-  min-width: 300px;
   object-fit: cover;
   object-position: top left;
   position: relative;
@@ -251,7 +321,6 @@ a {
     margin: 30px 0 0;
     max-height: 70vw;
     max-width: none;
-    min-width: 0;
     width: 100%;
   }
 
@@ -270,7 +339,6 @@ a {
   }
 
   &--container {
-    flex-shrink: 0;
     overflow: hidden;
   }
 }
@@ -299,7 +367,12 @@ a {
   background: url('img/hero.png') center / cover no-repeat;
   color: $light;
   flex-wrap: wrap;
+  margin-top: -100vh;
   padding-top: 47vh;
+
+  @media screen and (max-width: 1000px) {
+    margin-top: 0;
+  }
 }
 
 .hero__header {

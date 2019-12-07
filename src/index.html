@@ -10,8 +10,10 @@
 <body>
 
   <nav class="nav nav--scroll">
-    <img class="nav__logo nav__logo--white" src="/assets/img/uw_logo_white.png" alt="Logo Uniwersytetu Warszawskiego">
-    <img class="nav__logo nav__logo--black" src="/assets/img/uw_logo_black.png" alt="Logo Uniwersytetu Warszawskiego">
+    <div class="nav__logos">
+      <img class="nav__logo nav__logo--white" src="/assets/img/uw_logo_white.png" alt="Logo Uniwersytetu Warszawskiego">
+      <img class="nav__logo nav__logo--black" src="/assets/img/uw_logo_black.png" alt="Logo Uniwersytetu Warszawskiego">
+    </div>    
     <button class="hamburger hamburger--slider" type="button">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
@@ -26,16 +28,24 @@
     </ul>
   </nav>
 
-  <nav class="sections">
-    <ul class="sections__list">
-      <li class="sections__dot"></li>
-      <li class="sections__dot"></li>
-      <li class="sections__dot"></li>
-      <li class="sections__dot"></li>
-    </ul>
-  </nav>
+  <main class="page">
+    <nav class="sections">
+      <ul class="sections__list">
+        <li class="sections__dot">
+          <button class="sections__btn sections__btn--active" role="button"></button>
+        </li>
+        <li class="sections__dot">
+          <button class="sections__btn" role="button"></button>
+        </li>
+        <li class="sections__dot">
+          <button class="sections__btn" role="button"></button>
+        </li>
+        <li class="sections__dot">
+          <button class="sections__btn" role="button"></button>
+        </li>
+      </ul>
+    </nav>
 
-  <main>
     <section class="row hero" id="hero">
       <h1 class="hero__header">
         Będziesz się uczyć z&nbsp;ciekawością.
@@ -104,39 +114,39 @@
         </button>
       </div>
     </section>
-
-    <section class="form">
-      <form class="form__form">
-        <header class="form__header-container">
-          <h3 class="form__header">Nie znalazłeś odpowiedniego kontaktu?</h3>
-          <p class="form__subheader">Skorzystaj z formularza.</p>
-        </header>
-        <div class="input input--halfwidth">
-          <input class="input__input" type="text" name="first_name" id="first_name">
-          <label class="input__label" for="first_name">Imię</label>
-        </div>
-        <div class="input input--halfwidth">
-          <input class="input__input" type="text" name="last_name" id="last_name">
-          <label class="input__label" for="last_name">Nazwisko</label>
-        </div>
-        <div class="input">
-          <input class="input__input" type="email" name="email" id="email">
-          <label class="input__label" for="email">Adres e-mail</label>
-        </div>
-        <div class="input">
-          <textarea class="input__input input__input--large" name="message" id="message" cols="30" rows="10"></textarea>
-          <label class="input__label" for="message">Treść wiadomości</label>
-        </div>
-        <div class="input input--flex">
-          <input class="input__checkbox" type="checkbox" name="consent" id="consent">
-          <label class="input__label input__label--nonabsolute" for="consent">
-            Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żądania dostępu do moich danych osobowych, ich zmiany oraz usunięcia.
-          </label>
-        </div>
-        <button class="form__btn btn btn--blue" type="submit">Wyślij</button>
-      </form>
-    </section>
   </main>
+
+  <section class="form">
+    <form class="form__form">
+      <header class="form__header-container">
+        <h3 class="form__header">Nie znalazłeś odpowiedniego kontaktu?</h3>
+        <p class="form__subheader">Skorzystaj z formularza.</p>
+      </header>
+      <div class="input input--halfwidth">
+        <input class="input__input" type="text" name="first_name" id="first_name">
+        <label class="input__label" for="first_name">Imię</label>
+      </div>
+      <div class="input input--halfwidth">
+        <input class="input__input" type="text" name="last_name" id="last_name">
+        <label class="input__label" for="last_name">Nazwisko</label>
+      </div>
+      <div class="input">
+        <input class="input__input" type="email" name="email" id="email">
+        <label class="input__label" for="email">Adres e-mail</label>
+      </div>
+      <div class="input">
+        <textarea class="input__input input__input--large" name="message" id="message" cols="30" rows="10"></textarea>
+        <label class="input__label" for="message">Treść wiadomości</label>
+      </div>
+      <div class="input input--flex">
+        <input class="input__checkbox" type="checkbox" name="consent" id="consent">
+        <label class="input__label input__label--nonabsolute" for="consent">
+          Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumieniu ustawy z dnia 29 sierpnia 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żądania dostępu do moich danych osobowych, ich zmiany oraz usunięcia.
+        </label>
+      </div>
+      <button class="form__btn btn btn--blue" type="submit">Wyślij</button>
+    </form>
+  </section>
 
   <footer class="footer">
 
