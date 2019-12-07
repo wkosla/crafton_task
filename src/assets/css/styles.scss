@@ -516,11 +516,16 @@ a {
     margin-left: 12px;
     position: static;
   }
+
+  &--active {
+    font-size: .611em;
+    top: 10px;
+  }
 }
 
 .input__input {
   background-color: $bg-primary;
-  border: 0;
+  border: 1px solid transparent;
   font-family: $font-family;
   font-size: .777em;
   height: 50px;
@@ -540,6 +545,34 @@ a {
       font-size: .611em;
       top: 10px;
     }
+  }
+
+  &--invalid {
+    border: 1px solid $error;
+    color: $error;
+  }
+}
+
+.input__checkbox {
+  appearance: none;
+  background: $bg-primary center no-repeat;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+  height: 15px;
+  transition: .2s;
+  width: 15px;
+  will-change: border, box-shadow;
+
+  &:focus {
+    box-shadow: 0 8px 8px transparentize($shadow-color, .84);
+  }
+
+  &:checked {
+    background: $bg-primary url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 512 512"><path fill="rgb(0,0,0)" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>') center no-repeat;
+  }
+
+  &--invalid {
+    border: 1px solid $error;
   }
 }
 
