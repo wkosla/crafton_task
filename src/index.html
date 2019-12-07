@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <nav class="nav nav--scroll">
+  <nav class="nav">
     <div class="nav__logos">
       <img class="nav__logo nav__logo--white" src="/assets/img/uw_logo_white.png" alt="Logo Uniwersytetu Warszawskiego">
       <img class="nav__logo nav__logo--black" src="/assets/img/uw_logo_black.png" alt="Logo Uniwersytetu Warszawskiego">
@@ -32,16 +32,16 @@
     <nav class="sections">
       <ul class="sections__list">
         <li class="sections__dot">
-          <button class="sections__btn sections__btn--active" role="button"></button>
+          <a class="sections__btn sections__btn--active" href="#hero" title="Główny slider"></a>
         </li>
         <li class="sections__dot">
-          <button class="sections__btn" role="button"></button>
+          <a class="sections__btn" href="#for-whom" title="Sekcja Dla kogo?"></a>
         </li>
         <li class="sections__dot">
-          <button class="sections__btn" role="button"></button>
+          <a class="sections__btn" href="#why" title="Sekcja Po co?"></a>
         </li>
         <li class="sections__dot">
-          <button class="sections__btn" role="button"></button>
+          <a class="sections__btn" href="#with-whom" title="Sekcja Z kim?"></a>
         </li>
       </ul>
     </nav>
@@ -56,10 +56,10 @@
         <button class="btn btn--inverted hero__angel">Umów się z aniołem</button>
       </div>
       <div class="hero__arrows">
-        <button class="hero__arrow hero__arrow--left">
+        <button class="hero__arrow hero__arrow--left" title="Slide left">
           <svg class="hero__icon" width="30" height="21"><path d="M30.109 8.4H8L16.364 0h-5.913L-.005 10.5 10.448 21h5.913L8 12.6h22.112V8.4z" fill="currentColor"/></svg>
         </button>
-        <button class="hero__arrow hero__arrow--right">
+        <button class="hero__arrow hero__arrow--right" title="Slide right">
           <svg class="hero__icon" width="30" height="21"><path d="M-.015 12.6h22.109L13.73 21h5.913l10.456-10.5L19.646 0h-5.913l8.361 8.4H-.015v4.2z" fill="currentColor"/></svg>
         </button>
       </div>
@@ -223,6 +223,7 @@
 
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
   <script src="/assets/script.js"></script>
 </body>
 </html>
