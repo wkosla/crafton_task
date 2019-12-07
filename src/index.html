@@ -26,10 +26,19 @@
     </ul>
   </nav>
 
+  <nav class="sections">
+    <ul class="sections__list">
+      <li class="sections__dot"></li>
+      <li class="sections__dot"></li>
+      <li class="sections__dot"></li>
+      <li class="sections__dot"></li>
+    </ul>
+  </nav>
+
   <main>
-    <section class="row hero">
+    <section class="row hero" id="hero">
       <h1 class="hero__header">
-        Będziesz się uczyć z ciekawością.
+        Będziesz się uczyć z&nbsp;ciekawością.
         <em class="hero__highlight">Obiecujemy.</em>
       </h1>
       <div class="hero__btns">
@@ -46,7 +55,7 @@
       </div>
     </section>
 
-    <section class="row">
+    <section class="row" id="for-whom">
       <div class="row__text">
         <h2 class="row__header">Dla kogo?</h2>
         <p class="row__paragraph">
@@ -68,7 +77,7 @@
       <img class="row__image" src="/assets/img/globe.png" alt="Dłonie wskazujące na globus">
     </section>
 
-    <section class="row">
+    <section class="row" id="why">
       <img class="row__image row__image--left" src="/assets/img/handshake.png" alt="Uścisk dłoni">
       <div class="row__text">
         <h2 class="row__header">Po co?</h2>
@@ -78,7 +87,7 @@
       </div>
     </section>
 
-    <section class="row">
+    <section class="row" id="with-whom">
       <div class="row__text">
         <h2 class="row__header">Z kim?</h2>
         <p class="row__paragraph">
@@ -130,58 +139,64 @@
   </main>
 
   <footer class="footer">
-    <address class="address">
-      <p class="address__line">ul. Głogowska 10</p>
-      <p class="address__line">61-719 Poznań</p>
-      <p class="address__line">tel. 61 27 11 000</p>
-      <div class="address__map">
-        <!-- MAP -->
-      </div>
-    </address>
 
-    <div class="footer__links">
-
-      <div class="footer__group group">
-        <h4 class="group__header">O nas</h4>
-        <ul class="group__links">
-          <li class="group__link">Dlaczego CDV</li>
-          <li class="group__link">Kadra naukowa</li>
-          <li class="group__link">Dla mediów</li>
-          <li class="group__link">Kontakt</li>
-        </ul>
-      </div>
+    <div class="footer__wrapper">
+      <address class="address">
+        <div class="address__lines">
+          <p class="address__line">ul. Głogowska 10</p>
+          <p class="address__line">61-719 Poznań</p>
+          <p class="address__line">tel. 61 27 11 000</p>
+        </div>        
+        <div class="address__map">
+          <!-- MAP -->
+        </div>
+      </address>
   
-      <div class="footer__group group">
-        <h4 class="group__header">Dla kandydata</h4>
-        <ul class="group__links">
-          <li class="group__link">Poradnik maturzysty</li>
-          <li class="group__link">Rekrutacja</li>
-          <li class="group__link">Kredyt studencki</li>
-          <li class="group__link">Studia dla cudzoziemców</li>
-        </ul>
-      </div>
+      <div class="footer__links">
   
-      <div class="footer__group group">
-        <h4 class="group__header">Dla studenta</h4>
-        <ul class="group__links">
-          <li class="group__link">Wirtualna uczelnia</li>
-          <li class="group__link">Stypendia</li>
-          <li class="group__link">Biuro karier</li>
-          <li class="group__link">Studiuj dalej</li>
-        </ul>
-      </div>
+        <nav class="footer__group group">
+          <h4 class="group__header">O nas</h4>
+          <ul class="group__links">
+            <li class="group__link">Dlaczego CDV</li>
+            <li class="group__link">Kadra naukowa</li>
+            <li class="group__link">Dla mediów</li>
+            <li class="group__link">Kontakt</li>
+          </ul>
+        </nav>
+    
+        <nav class="footer__group group">
+          <h4 class="group__header">Dla kandydata</h4>
+          <ul class="group__links">
+            <li class="group__link">Poradnik maturzysty</li>
+            <li class="group__link">Rekrutacja</li>
+            <li class="group__link">Kredyt studencki</li>
+            <li class="group__link">Studia dla cudzoziemców</li>
+          </ul>
+        </nav>
+    
+        <nav class="footer__group group">
+          <h4 class="group__header">Dla studenta</h4>
+          <ul class="group__links">
+            <li class="group__link">Wirtualna uczelnia</li>
+            <li class="group__link">Stypendia</li>
+            <li class="group__link">Biuro karier</li>
+            <li class="group__link">Studiuj dalej</li>
+          </ul>
+        </nav>
+    
+        <nav class="footer__group group">
+          <h4 class="group__header">Dla biznesu</h4>
+          <ul class="group__links">
+            <li class="group__link">Współpraca z biznesem</li>
+            <li class="group__link">EmotionsLAB</li>
+            <li class="group__link">Wynajem sal</li>
+            <li class="group__link">Znajdź pracownika</li>
+          </ul>
+        </nav>
   
-      <div class="footer__group group">
-        <h4 class="group__header">Dla biznesu</h4>
-        <ul class="group__links">
-          <li class="group__link">Współpraca z biznesem</li>
-          <li class="group__link">EmotionsLAB</li>
-          <li class="group__link">Wynajem sal</li>
-          <li class="group__link">Znajdź pracownika</li>
-        </ul>
       </div>
-  
-      <div class="footer__group group">
+    
+      <nav class="footer__group footer__group--outer group">
         <h4 class="group__header">Na skróty</h4>
         <ul class="group__links">
           <li class="group__link">Aktualności</li>
@@ -189,12 +204,11 @@
           <li class="group__link">Konferencje</li>
           <li class="group__link">Blog</li>
         </ul>
-      </div>
+      </nav>
+    </div>    
 
-      <div class="footer__credits">
-        Projekt i realizacja: Crafton
-      </div>
-
+    <div class="footer__credits">
+      Projekt i realizacja: Crafton
     </div>
 
   </footer>
