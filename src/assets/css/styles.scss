@@ -1,13 +1,22 @@
 @import 'partials/normalize';
+@import 'partials/hamburgers';
 @import 'partials/fonts';
 @import 'partials/variables';
 @import 'partials/mixins';
+
+html {
+  overflow-x: hidden;
+}
 
 body {
   background-color: $bg-primary;
   color: $primary;
   font-family: $font-family;
   font-size: $base-size;
+
+  @media screen and (max-width: 750px) {
+    font-size: $mobile-size;
+  }
 }
 
 a {
@@ -94,6 +103,21 @@ a {
       }
     }
   }
+
+  @media screen and (max-width: 750px) {
+    // MOBILE NAV
+    .hamburger {
+      display: block;
+    }
+
+    .nav__logo {
+      width: 70px;
+    }
+
+    .nav__links {
+      display: none;
+    }
+  }
 }
 
 .nav__logo {
@@ -120,6 +144,19 @@ a {
   }
 }
 
+.hamburger {
+  display: none;
+}
+
+.hamburger-inner {
+  background-color: $primary;
+
+  &::before,
+  &::after {
+    background-color: inherit;
+  }
+}
+
 // ROW
 
 .row {
@@ -136,6 +173,26 @@ a {
 
   &:last-child {
     padding-bottom: 220px;
+  }
+
+  @media screen and (max-width: 750px) {
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+    padding-top: 80px;
+
+    &:nth-child(2) {
+      padding-top: 150px;
+    }
+  
+    &:last-child {
+      padding-bottom: 150px;
+    }
+  }
+}
+
+.row__text {
+  @media screen and (max-width: 750px) {
+    width: 100%;
   }
 }
 
@@ -178,6 +235,7 @@ a {
   height: 100%;
   margin-left: 87px;
   max-width: 45%;
+  min-width: 300px;
   object-fit: cover;
   object-position: top left;
   position: relative;
@@ -187,6 +245,13 @@ a {
     max-width: 40%;
   }
 
+  @media screen and (max-width: 750px) {
+    margin: 30px 0 0;
+    max-height: 70vw;
+    max-width: none;
+    width: 100%;
+  }
+
   &--left {
     margin-left: 0;
     margin-right: 95px;
@@ -194,10 +259,23 @@ a {
     @media screen and (max-width: 1000px) {
       margin-right: 40px;
     }
+
+    @media screen and (max-width: 750px) {
+      margin: 30px 0 0;
+      order: 1;
+    }
   }
 
   &--container {
     flex-shrink: 0;
+    overflow: hidden;
+  }
+}
+
+.row__image-inner {
+  @media screen and (max-width: 750px) {
+    object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -407,6 +485,12 @@ a {
   &:not(:nth-child(5)) {
     margin-right: 40px;
   }
+
+  @media screen and (max-width: 1200px) {
+    &:nth-child(5) {
+      margin-right: 40px;
+    }
+  }
 }
 
 .group__header {
@@ -431,4 +515,8 @@ a {
   padding-right: 20px;
   text-align: right;
   width: 100%;
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 0;
+  }
 }
