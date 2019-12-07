@@ -3,6 +3,7 @@ const gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
   babel = require('gulp-babel'),
+  uglify = require('gulp-uglify'),
   browsersync = require('browser-sync').create();
 
 function browserSync(done) {
@@ -23,7 +24,10 @@ function browserSyncReload(done) {
 function scripts() {
   return gulp.src('./src/assets/js/**/*.js')
     .pipe(sourcemaps.init())
-    .pipe(babel())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/assets/'))
     .pipe(browsersync.stream());
@@ -46,6 +50,11 @@ function html() {
     .pipe(gulp.dest('./build/'));
 }
 
+function php() {  
+  return gulp.src('./src/**/*.php')
+    .pipe(gulp.dest('./build/'));
+}
+
 function fonts() {
   return gulp.src('./src/assets/fonts/**/*.ttf')
     .pipe(gulp.dest('./build/assets/fonts/'));
@@ -60,11 +69,12 @@ function watchFiles() {
   gulp.watch('./src/assets/css/**/*', styles);
   gulp.watch('./src/assets/js/**/*', scripts);
   gulp.watch('./src/**/*.html', gulp.series(html, browserSyncReload));
+  gulp.watch('./src/**/*.php', gulp.series(php, browserSyncReload));
   gulp.watch('./src/assets/img/**/*', gulp.series(images, browserSyncReload));
 }
 
-const watch = gulp.series(html, styles, scripts, fonts, images, gulp.parallel(watchFiles, browserSync));
-const build = gulp.series(html, styles, scripts, fonts, images);
+const watch = gulp.series(html, styles, scripts, fonts, images, php, gulp.parallel(watchFiles, browserSync));
+const build = gulp.series(html, styles, scripts, fonts, images, php);
 
 exports.watch = watch;
 exports.build = build;

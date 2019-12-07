@@ -530,12 +530,13 @@ a {
   font-size: .777em;
   height: 50px;
   padding: 25px 15px 9px;
-  transition: .2s;
+  transition: .2s, height 0s;
   width: 100%;
   will-change: box-shadow;
 
   &--large {
     height: 160px;
+    resize: vertical;
   }
 
   &:focus {
@@ -578,6 +579,26 @@ a {
 
 .form__btn {
   margin: auto;
+}
+
+.form__message {
+  font-size: .777em;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 16px;
+  text-align: center;
+  transition: .3s;
+  width: 100%;
+  will-change: height;
+
+  &--show {
+    height: 34px;
+
+    @media screen and (max-width: 450px) {
+      height: 45px;
+    }
+  }
 }
 
 // FOOTER

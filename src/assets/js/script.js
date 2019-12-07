@@ -2,7 +2,7 @@ const nav = document.querySelector('.nav'),
   hamburger = document.querySelector('.hamburger'),
   sections = Array.from(document.querySelectorAll('.row')),
   sectionNavBtns = Array.from(document.querySelectorAll('.sections__btn')),
-  form = document.querySelector('.form'),
+  form = document.querySelector('.form__form'),
   inputs = Array.from(document.querySelectorAll('.input__input')),
   checkbox = document.querySelector('.input__checkbox');
 
@@ -32,13 +32,21 @@ function textCheck(val) {
   return re.test(val);
 }
 
-function inputValidate(input) {
-  const isValid = input.getAttribute('name') === 'email' ? emailCheck(input.value) : textCheck(input.value);
+function inputValidate(input, type = 'input', arr = false) {
+  let isValid;
+
+  if (type === 'input') {  
+    isValid = input.getAttribute('name') === 'email' ? emailCheck(input.value) : textCheck(input.value);
+  } else {
+    isValid = input.checked;
+  }
 
   if (!isValid) {
-    input.classList.add('input__input--invalid');
+    input.classList.add(`input__${type}--invalid`);
+    if (arr) arr.push(false);
   } else {
-    input.classList.remove('input__input--invalid');
+    input.classList.remove(`input__${type}--invalid`);
+    if (arr) arr.push(true);
   }
 }
 
@@ -96,14 +104,31 @@ checkbox.addEventListener('change', function() {
 form.addEventListener('submit', function(evt) {
   evt.preventDefault();
 
-  // Validate inputs
-  inputs.forEach(input => {
-    inputValidate(input);
-  });
+  const validatedInputs = [];
 
-  if (!checkbox.checked) {
-    checkbox.classList.add('input__checkbox--invalid');
-  } else {
-    checkbox.classList.remove('input__checkbox--invalid');
+  // Validate text inputs
+  inputs.forEach(input => {
+    inputValidate(input, 'input', validatedInputs);
+  });
+  // Validate checkbox
+  inputValidate(checkbox, 'checkbox', validatedInputs);
+
+  // Check if there are any invalid inputs
+  if (!validatedInputs.some(el => !el)) {
+    const formData = new FormData(form);
+    
+    fetch('../mail.php', {
+      method: 'POST',
+      body: formData      
+    }).then(({ status }) => {
+      const msg = this.lastElementChild;
+
+      if (status !== 200) {
+        msg.innerText = 'Nie udało się wysłać wiadomości. Spróbuj ponownie poźniej.';
+      } else {
+        msg.innerText = 'Wiadomość wysłana.';
+      }
+      msg.classList.add('form__message--show');
+    });
   }
 });
