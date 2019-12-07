@@ -1,4 +1,5 @@
 const nav = document.querySelector('.nav'),
+  hamburger = document.querySelector('.hamburger'),
   sections = Array.from(document.querySelectorAll('.row')),
   sectionNavBtns = Array.from(document.querySelectorAll('.sections__btn'));
 
@@ -38,3 +39,8 @@ window.addEventListener('scroll', function() {
     }
   })
 });
+
+hamburger.addEventListener('click', function() {
+  this.classList.toggle('is-active');
+  nav.classList.toggle('nav--toggled');
+})

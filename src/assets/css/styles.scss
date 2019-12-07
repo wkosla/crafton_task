@@ -101,13 +101,17 @@ a {
       margin-top: -100px;
     }
 
-    .hamburger-inner {
-      background-color: $primary;
+    .hamburger {
+      &,
+      &.is-active {
+        .hamburger-inner {
+          background-color: $primary;
+        }
+      }
     }
   }
 
-  @media screen and (max-width: 750px) {    
-    // MOBILE NAV
+  @media screen and (max-width: 750px) {
     &--scroll {
       .nav__logo--white {
         margin-top: -78px;
@@ -127,7 +131,28 @@ a {
     }
 
     .nav__links {
-      display: none;
+      align-items: stretch;
+      background-color: $bg-primary;
+      color: $primary;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0 -50vw 0 0;
+      padding: 40px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50vw;
+    }
+
+    .nav__link {
+      margin-bottom: 40px;
+      width: 100%;
+    }
+  }
+
+  &--toggled {
+    @media screen and (max-width: 750px) {
+      transform: translateX(-50vw);
     }
   }
 }
@@ -156,19 +181,27 @@ a {
     @media screen and (max-width: 1000px) {
       margin-left: 40px;
     }
+
+    @media screen and (max-width: 750px) {
+      margin-left: 0;
+    }
   }
 }
 
 .hamburger {
   display: none;
-}
 
-.hamburger-inner {
-  background-color: $light;
+  &,
+  &.is-active {
 
-  &::before,
-  &::after {
-    background-color: inherit;
+    .hamburger-inner {
+      background-color: $light;
+
+      &::before,
+      &::after {
+        background-color: inherit;
+      }
+    }
   }
 }
 
