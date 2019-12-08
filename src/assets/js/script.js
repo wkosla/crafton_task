@@ -87,7 +87,7 @@ window.addEventListener('scroll', function() {
       sectionNavBtns[i].classList.remove('sections__btn--active');
     }
   });
-}, {passive: true});
+});
 
 hamburger.addEventListener('click', function() {
   this.classList.toggle('is-active');
