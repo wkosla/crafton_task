@@ -215,6 +215,7 @@ a {
   position: sticky;
   top: 0;
   width: calc((100% - 1187px) / 2);
+  z-index: 1000;
 
   @media screen and (max-width: 1000px) {
     display: none;
@@ -417,7 +418,6 @@ a {
 }
 
 .hero__btns {
-  margin-bottom: 72px;
   width: 100%;
 
   .btn {
@@ -453,16 +453,12 @@ a {
 .hero__slider {
   display: flex;
   position: relative;
-  width: 100%;
+  width: 300vw;
 }
 
 .hero__slide {
-  width: 100%;
-
-  &--prev,
-  &--next {
-    position: absolute;
-  }
+  order: 0;
+  width: 100vw;
 }
 
 // FORM

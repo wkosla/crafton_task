@@ -4,7 +4,9 @@ const nav = document.querySelector('.nav'),
   sectionNavBtns = Array.from(document.querySelectorAll('.sections__btn')),
   form = document.querySelector('.form__form'),
   inputs = Array.from(document.querySelectorAll('.input__input')),
-  checkbox = document.querySelector('.input__checkbox');
+  checkbox = document.querySelector('.input__checkbox'),
+  sliderArrows = Array.from(document.querySelectorAll('.hero__arrow')),
+  slider = document.querySelector('.hero__slider');
 
 // Initialize smooth-scroll lib
 const scroll = new SmoothScroll('a[href*="#"]', {
@@ -133,7 +135,32 @@ form.addEventListener('submit', function(evt) {
   }
 });
 
+sliderArrows.forEach((arrow, i) => {
+  arrow.addEventListener('click', function() {
+    if (i === 0) { // Slide lef
+      if (!slider.style.transform) { // Move last one to front
+        const slides = Array.from(document.querySelectorAll('.hero__slide'));
 
+        slider.prepend(slides[slides.length - 1]);
+        slider.style.transform = 'translateX(-100vw)';
+      }
+
+      setTimeout(() => {
+        slider.style.transition = '.3s';
+        slider.style.transform = 'none';
+        this.style.pointerEvents = 'none';
+      }, 1);
+
+      setTimeout(() => {
+        slider.removeAttribute('style');
+        this.removeAttribute('style');
+      }, 301);
+    } else { // Slide right
+      slider.style.transition = '.3s';
+      slider.style.transform = 'translateX(-100vw)';
+    }
+  });
+});
 
 // Google maps
 let map;
