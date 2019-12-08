@@ -81,6 +81,7 @@ a {
   color: $light;
   font-size: 0.889em;
   justify-content: space-between;
+  max-width: 100%;
   padding-bottom: 0;
   padding-top: 40px;
   position: fixed;
@@ -269,6 +270,7 @@ a {
   display: flex;
   min-height: 100vh;
   min-width: 100%;
+  overflow-x: hidden;
   padding-top: 216px;
 
   &:last-child {
@@ -408,6 +410,7 @@ a {
   font-weight: 200;
   line-height: 1.5;
   margin: 0 0 40px;
+  max-width: calc(100vw - 80px);
 }
 
 .hero__highlight {
