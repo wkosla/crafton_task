@@ -751,6 +751,10 @@ a {
     height: calc(100% + 30px) !important;
     margin-top: -15px;
   }
+
+  div {
+    cursor: pointer;
+  }
 }
 
 .footer__links {
