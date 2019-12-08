@@ -76,13 +76,10 @@ function toggleSectionsNavColors() {
 toggleNavScroll(window);
 toggleSectionsNavColors();
 
-window.addEventListener('scroll', function(evt) {
-  // Add white background to nav after scrolling down
-  toggleNavScroll(this)
-  // Change sections navigation buttons colors when entering white background
+window.addEventListener('scroll', function() {
+  toggleNavScroll(this);
   toggleSectionsNavColors();
 
-  // Highlight sections navigation buttons when entering relevant section
   sections.forEach((section, i) => {
     if (inView(section)) {
       sectionNavBtns[i].classList.add('sections__btn--active');
@@ -92,7 +89,6 @@ window.addEventListener('scroll', function(evt) {
   });
 }, {passive: true});
 
-// Toggle mobile nav
 hamburger.addEventListener('click', function() {
   this.classList.toggle('is-active');
   nav.classList.toggle('nav--toggled');
@@ -100,7 +96,6 @@ hamburger.addEventListener('click', function() {
 
 inputs.forEach(input => {
   input.addEventListener('change', function() {
-    // "Activate" label if input is not empty
     if (this.value.length > 0) {
       this.nextElementSibling.classList.add('input__label--active');
       inputValidate(this);
@@ -121,14 +116,12 @@ form.addEventListener('submit', function(evt) {
 
   const validatedInputs = [];
 
-  // Validate text inputs
   inputs.forEach(input => {
     inputValidate(input, 'input', validatedInputs);
   });
-  // Validate checkbox
+
   inputValidate(checkbox, 'checkbox', validatedInputs);
 
-  // Check if there are any invalid inputs
   if (!validatedInputs.some(el => !el)) {
     const formData = new FormData(form);
     
@@ -155,7 +148,7 @@ sliderArrows.forEach((arrow, i) => {
     const slides = Array.from(document.querySelectorAll('.hero__slide'));
     this.style.pointerEvents = 'none';
 
-    if (i === 0) { // Slide lef
+    if (i === 0) { // Slide left
       if (currSlide === 1) {
         slider.prepend(slides[slides.length - 1]);
         slider.style.transform = 'translateX(-100vw)';
