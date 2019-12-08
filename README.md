@@ -3,7 +3,7 @@ Build with Gulp v4. Requires Node.js >= 8 with npm installed.
 
 ## Development
 
-Run `gulp watch` to start development server with live reload.
+Run `gulp watch` to start development server with live reload. Running on port `3000` by default.
 
 ## Build
 

@@ -184,6 +184,7 @@ sliderArrows.forEach((arrow, i) => {
   });
 });
 
+// YT player
 let player;
 
 function onYouTubeIframeAPIReady() {
