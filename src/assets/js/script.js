@@ -90,7 +90,7 @@ window.addEventListener('scroll', function(evt) {
       sectionNavBtns[i].classList.remove('sections__btn--active');
     }
   });
-});
+}, {passive: true});
 
 // Toggle mobile nav
 hamburger.addEventListener('click', function() {
