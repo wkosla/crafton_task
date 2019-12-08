@@ -450,6 +450,21 @@ a {
   will-change: fill;
 }
 
+.hero__slider {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.hero__slide {
+  width: 100%;
+
+  &--prev,
+  &--next {
+    position: absolute;
+  }
+}
+
 // FORM
 
 .form {
@@ -608,7 +623,7 @@ a {
   background-color: $bg-tertiary;
   color: $light;
   font-size: .777em;
-  padding-bottom: 70px;
+  padding-bottom: 110px;
   padding-top: 84px;
   position: relative;
 }
@@ -674,6 +689,12 @@ a {
   @media screen and (max-width: 450px) {
     margin: 40px auto 0;
     order: 0;
+  }
+
+  // Overwrite google map styles to hide copyright text
+  > div {
+    height: calc(100% + 30px) !important;
+    margin-top: -15px;
   }
 }
 
