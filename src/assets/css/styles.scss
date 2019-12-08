@@ -78,7 +78,6 @@ a {
 .nav {
   @include flex-vcenter;
   @include side-padding;
-  color: $light;
   font-size: 0.889em;
   justify-content: space-between;
   max-width: 100%;
@@ -94,12 +93,15 @@ a {
   &--scroll {
     background-color: $bg-primary;
     box-shadow: 11px 0 35px transparentize($shadow-color, .78);
-    color: $primary;
     padding-bottom: 20px;
     padding-top: 20px;
 
     .nav__logo--white {
       margin-top: -100px;
+    }
+
+    .nav__link {
+      color: $primary;
     }
 
     .hamburger {
@@ -170,12 +172,12 @@ a {
   will-change: margin;
 }
 
-.nav__links {
+.nav__items {
   @include flex-vcenter;
   list-style: none;
 }
 
-.nav__link {
+.nav__item {
   &:not(:first-child) {
     margin-left: 71px;
 
@@ -186,6 +188,16 @@ a {
     @media screen and (max-width: 750px) {
       margin-left: 0;
     }
+  }
+}
+
+.nav__link {
+  color: $light;
+  transition: .2s;
+  will-change: color;
+
+  &:hover {
+    color: $secondary;
   }
 }
 
@@ -825,15 +837,25 @@ a {
   margin: 0 0 30px;
 }
 
-.group__links {
+.group__items {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-.group__link {
+.group__item {
   line-height: 1.5;
   margin: 20px 0 0;
+}
+
+.group__link {
+  color: $light;
+  transition: .2s;
+  will-change: color;
+
+  &:hover {
+    color: $secondary;
+  }
 }
 
 .footer__credits {
