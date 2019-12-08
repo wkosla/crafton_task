@@ -6,7 +6,10 @@ const nav = document.querySelector('.nav'),
   inputs = Array.from(document.querySelectorAll('.input__input')),
   checkbox = document.querySelector('.input__checkbox'),
   sliderArrows = Array.from(document.querySelectorAll('.hero__arrow')),
-  slider = document.querySelector('.hero__slider');
+  slider = document.querySelector('.hero__slider'),
+  playBtn = document.querySelector('.row__play'),
+  closeVidBtn = document.querySelector('.row__close'),
+  videoOverlay = document.querySelector('.row__overlay');
 
 // Initialize smooth-scroll lib
 const scroll = new SmoothScroll('a[href*="#"]', {
@@ -52,15 +55,15 @@ function inputValidate(input, type = 'input', arr = false) {
   }
 }
 
-window.addEventListener('scroll', function() {
-  // Add white background to nav after scrolling down
-  if (this.scrollY > 0) {
+function toggleNavScroll(win) {
+  if (win.scrollY > 0) {
     nav.classList.add('nav--scroll');
   } else {
     nav.classList.remove('nav--scroll');
   }
+}
 
-  // Change sections navigation buttons colors when entering white background
+function toggleSectionsNavColors() {  
   sectionNavBtns.forEach(btn => {
     if (onWhite(btn)) {
       btn.classList.add('sections__btn--dark');
@@ -68,6 +71,16 @@ window.addEventListener('scroll', function() {
       btn.classList.remove('sections__btn--dark');
     }
   });
+}
+
+toggleNavScroll(window);
+toggleSectionsNavColors();
+
+window.addEventListener('scroll', function(evt) {
+  // Add white background to nav after scrolling down
+  toggleNavScroll(this)
+  // Change sections navigation buttons colors when entering white background
+  toggleSectionsNavColors();
 
   // Highlight sections navigation buttons when entering relevant section
   sections.forEach((section, i) => {
@@ -177,6 +190,27 @@ sliderArrows.forEach((arrow, i) => {
     }, 300);
   });
 });
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    width: 1280,
+    height: 720,
+    videoId: 'r9u8IvT_aHg',
+  });
+}
+
+playBtn.addEventListener('click', function() {
+  this.nextElementSibling.classList.toggle('row__overlay--show');
+});
+
+videoOverlay.addEventListener('click', function(evt) {
+  if (!evt.target.closest('#player')) {
+    player.stopVideo();
+    this.classList.toggle('row__overlay--show');
+  }
+})
 
 // Google maps
 let map;

@@ -389,6 +389,48 @@ a {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: .3s;
+  will-change: transform;
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.row__overlay {
+  background-color: transparentize($bg-tertiary, .1);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  &--show {
+    display: flex;
+  }
+}
+
+.row__video-container {
+  align-items: flex-start;
+  display: flex;
+  margin: auto;
+}
+
+.row__close {
+  align-items: baseline;
+  background: none;
+  border: 0;
+  color: $light;
+  cursor: pointer;
+  display: flex;
+  transition: .3s;
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.4);
+  }
 }
 
 // HERO
