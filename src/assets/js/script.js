@@ -135,30 +135,46 @@ form.addEventListener('submit', function(evt) {
   }
 });
 
+let currSlide = 1;
+
 sliderArrows.forEach((arrow, i) => {
   arrow.addEventListener('click', function() {
-    if (i === 0) { // Slide lef
-      if (!slider.style.transform) { // Move last one to front
-        const slides = Array.from(document.querySelectorAll('.hero__slide'));
+    const slides = Array.from(document.querySelectorAll('.hero__slide'));
+    this.style.pointerEvents = 'none';
 
+    if (i === 0) { // Slide lef
+      if (currSlide === 1) {
         slider.prepend(slides[slides.length - 1]);
         slider.style.transform = 'translateX(-100vw)';
-      }
 
-      setTimeout(() => {
+        setTimeout(() => {
+          slider.style.transition = '.3s';
+          slider.style.transform = 'none';
+        }, 1);
+      } else {
+        currSlide--;
         slider.style.transition = '.3s';
-        slider.style.transform = 'none';
-        this.style.pointerEvents = 'none';
-      }, 1);
-
-      setTimeout(() => {
-        slider.removeAttribute('style');
-        this.removeAttribute('style');
-      }, 301);
+        slider.style.transform = `translate(-${currSlide - 1}00vw)`;
+      }
     } else { // Slide right
-      slider.style.transition = '.3s';
-      slider.style.transform = 'translateX(-100vw)';
+      if (currSlide < slides.length) {
+        slider.style.transition = '.3s';
+        slider.style.transform = `translateX(-${currSlide}00vw)`;
+        currSlide++;
+      } else {
+        slider.style.transform = `translateX(-${currSlide - 2}00vw)`;
+        slider.append(slides[0]);
+
+        setTimeout(() => {
+          slider.style.transition = '.3s';
+          slider.style.transform = `translateX(-${currSlide - 1}00vw)`;
+        }, 1);   
+      }
     }
+    setTimeout(() => {
+      slider.style.transition = '0s';
+      this.removeAttribute('style')
+    }, 300);
   });
 });
 
