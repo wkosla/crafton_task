@@ -215,6 +215,10 @@ function initMap() {
     center: myLatLng,
     zoom: 15,
     disableDefaultUI: true,
+    draggable: false,
+    zoomControl: false,
+    scrollwheel: false,
+    disableDoubleClickZoom: true,
     styles: [
       {
         "elementType": "geometry",
