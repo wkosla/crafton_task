@@ -416,6 +416,15 @@ a {
   align-items: flex-start;
   display: flex;
   margin: auto;
+  position: relative;
+}
+
+#player {
+  max-width: 80vw;
+
+  @media screen and (max-width: 1600px) {
+    height: calc(80vw / 1.8);
+  }
 }
 
 .row__close {
@@ -425,6 +434,9 @@ a {
   color: $light;
   cursor: pointer;
   display: flex;
+  position: absolute;
+  right: -40px;
+  top: 0;
   transition: .3s;
   will-change: transform;
 
