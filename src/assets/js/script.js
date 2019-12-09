@@ -7,10 +7,7 @@ window.onload = () => {
     inputs = Array.from(document.querySelectorAll('.input__input')),
     checkbox = document.querySelector('.input__checkbox'),
     sliderArrows = Array.from(document.querySelectorAll('.hero__arrow')),
-    slider = document.querySelector('.hero__slider'),
-    playBtn = document.querySelector('.row__play'),
-    closeVidBtn = document.querySelector('.row__close'),
-    videoOverlay = document.querySelector('.row__overlay');
+    slider = document.querySelector('.hero__slider');
 
   // Initialize smooth-scroll lib
   const scroll = new SmoothScroll('a[href*="#"]', {
@@ -185,6 +182,10 @@ window.onload = () => {
     });
   });
 }
+
+const playBtn = document.querySelector('.row__play'),
+  closeVidBtn = document.querySelector('.row__close'),
+  videoOverlay = document.querySelector('.row__overlay');
 
 // YT player
 let player;
