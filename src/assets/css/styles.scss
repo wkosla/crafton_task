@@ -151,6 +151,10 @@ a {
       margin-bottom: 40px;
       width: 100%;
     }
+    
+    .nav__link {
+      color: $primary;
+    }
   }
 
   &--toggled {
